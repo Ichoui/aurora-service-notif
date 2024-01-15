@@ -10,7 +10,7 @@ async function createNestServer(expressInstance: express.Express) {
   const app = await NestFactory.create<NestExpressApplication>(AppModule, new ExpressAdapter(expressInstance), {
   });
   await app.listen(1994);
-
+console.log(process.env.HOST);
   app.enableCors();
   app.disable('x-powered-by');
   app.disable('X-Powered-By');
